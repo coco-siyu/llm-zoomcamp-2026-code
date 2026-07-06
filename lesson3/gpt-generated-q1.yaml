@@ -1,0 +1,43 @@
+id: nyc_taxi_csv_to_bigquery
+namespace: company.team
+
+variables:
+  project_id: your-gcp-project
+  dataset: ny_taxi
+  table: yellow_tripdata_2024_01
+  bucket: your-gcs-bucket
+  region: US
+  csv_url: https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-01.csv
+
+tasks:
+  - id: download_csv
+    type: io.kestra.plugin.core.http.Download
+    uri: "{{ vars.csv_url }}"
+
+  - id: upload_to_gcs
+    type: io.kestra.plugin.gcp.gcs.Upload
+    from: "{{ outputs.download_csv.uri }}"
+    bucket: "{{ vars.bucket }}"
+    name: "{{ vars.table }}.csv"
+
+  - id: create_dataset
+    type: io.kestra.plugin.gcp.bigquery.CreateDataset
+    projectId: "{{ vars.project_id }}"
+    dataset: "{{ vars.dataset }}"
+    location: "{{ vars.region }}"
+    ifExists: SKIP
+
+  - id: load_csv_to_bigquery
+    type: io.kestra.plugin.gcp.bigquery.LoadFromGcs
+    projectId: "{{ vars.project_id }}"
+    dataset: "{{ vars.dataset }}"
+    table: "{{ vars.table }}"
+
+    from:
+      - "gs://{{ vars.bucket }}/{{ vars.table }}.csv"
+
+    format: CSV
+    autodetect: true
+    writeDisposition: WRITE_TRUNCATE
+    createDisposition: CREATE_IF_NEEDED
+    skipLeadingRows: 1
