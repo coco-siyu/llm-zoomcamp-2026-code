@@ -1,16 +1,8 @@
-## Homework: AI Orchestration with Kestra
+# Homework 3 — Orchestration
 
-ATTENTION: At the end of the submission form, you will be required to include a link to your GitHub repository or other public code-hosting site. This repository should contain your code for solving the homework. If your solution includes code that is not in file format, please include these directly in the README file of your repository.
+This folder contains my Kestra flows for Homework 3 of LLM Zoomcamp 2026.
 
-> It's possible your answers won't match exactly. If so, select the closest one
-
-## Prerequisites
-
-Before starting this homework, ensure you have:
-
-1. Completed the [Module 3 lessons](../../../03-orchestration/README.md) — the questions reference flows and concepts covered there
-2. Kestra running locally with API keys configured (see the [Setup](../../../03-orchestration/lessons/03-setup.md) lesson) -- this includes the Gemini API key, which is also required for the AI Copilot
-3. Imported all flows from the `03-orchestration/flows/` directory (covered in the Setup lesson)
+For Question 5, I updated the `english_brevity` task from a one-sentence summary to an exactly three-sentence English summary and compared the output token usage.
 
 ## Question 1: Context Engineering
 
@@ -96,50 +88,3 @@ Based on what you learned in this module, for production workflows requiring det
 - Use web search tools exclusively to ensure current data
 
 Answer: Use traditional task-based workflows for predictability and auditability
-
-## Learning in Public
-
-We encourage everyone to share what they learned. This is called "learning in public".
-
-Read more about the benefits [here](https://alexeyondata.substack.com/p/benefits-of-learning-in-public-and) and in the [course's learning in public guide](https://datatalks.club/docs/courses/zoomcamp-logistics/learning-in-public/).
-
-### Example post for LinkedIn
-
-Tag [@Alexey Grigorev](https://www.linkedin.com/in/agrigorev/) and [@DataTalksClub](https://www.linkedin.com/company/datatalks-club/) in your post - we'll like and comment to give your post more reach.
-
-```
-🚀 Module 3 of LLM Zoomcamp by @DataTalksClub complete!
-
-Just finished Module 3 - AI Orchestration with @Kestra. Learned how to:
-
-✅ Engineer context so the LLM gets the right information
-✅ Ground answers in real data with RAG
-✅ Build AI agents that decide which tools to call
-✅ Orchestrate multi-agent systems
-
-Here's my homework solution: <LINK>
-
-Following along with this amazing free course by @Alexey Grigorev - who else is learning to build with LLMs?
-
-You can sign up here: https://github.com/DataTalksClub/llm-zoomcamp/
-```
-
-### Example post for X
-
-```
-🤖 Module 3 of LLM Zoomcamp done!
-
-- AI orchestration with @kestra_io
-- Context engineering
-- RAG-grounded answers
-- AI agents & multi-agent systems
-
-My solution: <LINK>
-
-Free course by @Al_Grigor & @DataTalksClub: https://github.com/DataTalksClub/llm-zoomcamp/
-```
-
-## Submitting the Solutions
-
-* Form for submitting: https://courses.datatalks.club/llm-zoomcamp-2026/homework/hw3
-* Check the link above to see the due date
