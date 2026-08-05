@@ -1,0 +1,14 @@
+# put your configuration values here
+
+[runtime]
+log_level="WARNING"  # the system log level of dlt
+# use the dlthub_telemetry setting to enable/disable anonymous usage data reporting, see https://dlthub.com/docs/reference/telemetry
+dlthub_telemetry = true
+workspace_id = "4b8d7183-d032-4b21-87d5-85f77a463823"
+organization_id = "9687f3dd-9203-4e94-934f-2632574717e4"
+
+[sources.filesystem]
+bucket_url = "file:///home/codespace/.codex/sessions"
+
+[workspace.settings]
+name = "playground"
